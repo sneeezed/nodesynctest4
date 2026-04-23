@@ -84,6 +84,8 @@
       ],
       "parent": null,
       "type_specific": {
+        "image_name": "brady.jpg",
+        "image_filepath": "//../brady.jpg",
         "interpolation": "Linear",
         "projection": "FLAT",
         "extension": "REPEAT"
