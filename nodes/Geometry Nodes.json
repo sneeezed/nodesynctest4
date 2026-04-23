@@ -67,7 +67,7 @@
       "label": "",
       "bl_idname": "NodeGroupOutput",
       "location": [
-        200.0,
+        539.4855346679688,
         0.0
       ],
       "width": 140.0,
@@ -100,16 +100,184 @@
         }
       ],
       "outputs": []
+    },
+    {
+      "name": "Set Shade Smooth",
+      "label": "",
+      "bl_idname": "GeometryNodeSetShadeSmooth",
+      "location": [
+        307.4540710449219,
+        40.95921325683594
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {},
+      "inputs": [
+        {
+          "identifier": "Geometry",
+          "name": "Geometry",
+          "socket_type": "NodeSocketGeometry",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Selection",
+          "name": "Selection",
+          "socket_type": "NodeSocketBool",
+          "default_value": true,
+          "hide": false,
+          "hide_value": true
+        },
+        {
+          "identifier": "Shade Smooth",
+          "name": "Shade Smooth",
+          "socket_type": "NodeSocketBool",
+          "default_value": true,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Geometry",
+          "name": "Geometry",
+          "socket_type": "NodeSocketGeometry",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
+    },
+    {
+      "name": "Volume Cube",
+      "label": "",
+      "bl_idname": "GeometryNodeVolumeCube",
+      "location": [
+        42.68994140625,
+        39.29811096191406
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {},
+      "inputs": [
+        {
+          "identifier": "Density",
+          "name": "Density",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Background",
+          "name": "Background",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Min",
+          "name": "Min",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            -1.0,
+            -1.0,
+            -1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Max",
+          "name": "Max",
+          "socket_type": "NodeSocketVector",
+          "default_value": [
+            1.0,
+            1.0,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Resolution X",
+          "name": "Resolution X",
+          "socket_type": "NodeSocketInt",
+          "default_value": 32,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Resolution Y",
+          "name": "Resolution Y",
+          "socket_type": "NodeSocketInt",
+          "default_value": 32,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Resolution Z",
+          "name": "Resolution Z",
+          "socket_type": "NodeSocketInt",
+          "default_value": 32,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Volume",
+          "name": "Volume",
+          "socket_type": "NodeSocketGeometry",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
     }
   ],
   "links": [
     {
-      "from_node": "Group Input",
-      "from_socket_identifier": "Socket_0",
+      "from_node": "Set Shade Smooth",
+      "from_socket_identifier": "Geometry",
       "from_socket_name": "Geometry",
       "to_node": "Group Output",
       "to_socket_identifier": "Socket_1",
       "to_socket_name": "Geometry"
+    },
+    {
+      "from_node": "Volume Cube",
+      "from_socket_identifier": "Volume",
+      "from_socket_name": "Volume",
+      "to_node": "Set Shade Smooth",
+      "to_socket_identifier": "Geometry",
+      "to_socket_name": "Geometry"
+    },
+    {
+      "from_node": "Group Input",
+      "from_socket_identifier": "Socket_0",
+      "from_socket_name": "Geometry",
+      "to_node": "Volume Cube",
+      "to_socket_identifier": "Density",
+      "to_socket_name": "Density"
     }
   ]
 }
