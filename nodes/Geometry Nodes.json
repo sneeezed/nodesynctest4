@@ -24,45 +24,6 @@
   ],
   "nodes": [
     {
-      "name": "Group Input",
-      "label": "",
-      "bl_idname": "NodeGroupInput",
-      "location": [
-        -340.0,
-        0.0
-      ],
-      "width": 140.0,
-      "hide": false,
-      "mute": false,
-      "use_custom_color": false,
-      "color": [
-        0.6079999804496765,
-        0.6079999804496765,
-        0.6079999804496765
-      ],
-      "parent": null,
-      "type_specific": {},
-      "inputs": [],
-      "outputs": [
-        {
-          "identifier": "Socket_0",
-          "name": "Geometry",
-          "socket_type": "NodeSocketGeometry",
-          "default_value": null,
-          "hide": false,
-          "hide_value": false
-        },
-        {
-          "identifier": "__extend__",
-          "name": "",
-          "socket_type": "NodeSocketVirtual",
-          "default_value": null,
-          "hide": false,
-          "hide_value": false
-        }
-      ]
-    },
-    {
       "name": "Group Output",
       "label": "",
       "bl_idname": "NodeGroupOutput",
@@ -198,7 +159,7 @@
           "name": "Min",
           "socket_type": "NodeSocketVector",
           "default_value": [
-            -1.0,
+            6.59999942779541,
             -1.0,
             -1.0
           ],
@@ -270,14 +231,6 @@
       "to_node": "Set Shade Smooth",
       "to_socket_identifier": "Geometry",
       "to_socket_name": "Geometry"
-    },
-    {
-      "from_node": "Group Input",
-      "from_socket_identifier": "Socket_0",
-      "from_socket_name": "Geometry",
-      "to_node": "Volume Cube",
-      "to_socket_identifier": "Density",
-      "to_socket_name": "Density"
     }
   ]
 }
