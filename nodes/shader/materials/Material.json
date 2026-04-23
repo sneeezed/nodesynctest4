@@ -70,7 +70,7 @@
       "label": "",
       "bl_idname": "ShaderNodeBsdfPrincipled",
       "location": [
-        10.0,
+        -403.0373229980469,
         300.0
       ],
       "width": 240.0,
@@ -388,13 +388,53 @@
           "hide_value": false
         }
       ]
+    },
+    {
+      "name": "Wireframe",
+      "label": "",
+      "bl_idname": "ShaderNodeWireframe",
+      "location": [
+        -11.327255249023438,
+        219.3591766357422
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {},
+      "inputs": [
+        {
+          "identifier": "Size",
+          "name": "Size",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.009999999776482582,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Fac",
+          "name": "Fac",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
     }
   ],
   "links": [
     {
-      "from_node": "Principled BSDF",
-      "from_socket_identifier": "BSDF",
-      "from_socket_name": "BSDF",
+      "from_node": "Wireframe",
+      "from_socket_identifier": "Fac",
+      "from_socket_name": "Fac",
       "to_node": "Material Output",
       "to_socket_identifier": "Surface",
       "to_socket_name": "Surface"
