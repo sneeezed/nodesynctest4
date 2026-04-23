@@ -1,0 +1,122 @@
+{
+  "schema_version": "1.0",
+  "name": "Shader Nodetree",
+  "type": "ShaderNodeTree",
+  "interface": [],
+  "nodes": [
+    {
+      "name": "World Output",
+      "label": "",
+      "bl_idname": "ShaderNodeOutputWorld",
+      "location": [
+        300.0,
+        300.0
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {
+        "target": "ALL"
+      },
+      "inputs": [
+        {
+          "identifier": "Surface",
+          "name": "Surface",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Volume",
+          "name": "Volume",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": []
+    },
+    {
+      "name": "Background",
+      "label": "",
+      "bl_idname": "ShaderNodeBackground",
+      "location": [
+        10.0,
+        300.0
+      ],
+      "width": 140.0,
+      "hide": false,
+      "mute": false,
+      "use_custom_color": false,
+      "color": [
+        0.6079999804496765,
+        0.6079999804496765,
+        0.6079999804496765
+      ],
+      "parent": null,
+      "type_specific": {},
+      "inputs": [
+        {
+          "identifier": "Color",
+          "name": "Color",
+          "socket_type": "NodeSocketColor",
+          "default_value": [
+            0.05087608844041824,
+            0.05087608844041824,
+            0.05087608844041824,
+            1.0
+          ],
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Strength",
+          "name": "Strength",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 1.0,
+          "hide": false,
+          "hide_value": false
+        },
+        {
+          "identifier": "Weight",
+          "name": "Weight",
+          "socket_type": "NodeSocketFloat",
+          "default_value": 0.0,
+          "hide": false,
+          "hide_value": false
+        }
+      ],
+      "outputs": [
+        {
+          "identifier": "Background",
+          "name": "Background",
+          "socket_type": "NodeSocketShader",
+          "default_value": null,
+          "hide": false,
+          "hide_value": false
+        }
+      ]
+    }
+  ],
+  "links": [
+    {
+      "from_node": "Background",
+      "from_socket_identifier": "Background",
+      "from_socket_name": "Background",
+      "to_node": "World Output",
+      "to_socket_identifier": "Surface",
+      "to_socket_name": "Surface"
+    }
+  ],
+  "owner_type": "worlds",
+  "owner_name": "World"
+}
